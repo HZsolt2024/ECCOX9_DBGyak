@@ -15,9 +15,13 @@ void nagybeture(const char *line)
 
 int main()
 {
-    char filename[] = "eccox9.txt";
+    char filename[MAX_LINE];
     char line[MAX_LINE];
     FILE *file;
+
+    printf("Adja meg a file nevét: ");
+    fgets(filename, MAX_LINE, stdin);
+    filename[strcspn(filename, "\n")] = 0;
 
     file = fopen(filename, "w");
     if (file == NULL)
