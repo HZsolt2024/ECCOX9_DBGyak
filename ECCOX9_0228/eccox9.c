@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -22,6 +23,8 @@ int main()
     printf("Adja meg a file nevét: ");
     fgets(filename, MAX_LINE, stdin);
     filename[strcspn(filename, "\n")] = 0;
+
+    strcat(filename, ".txt");
 
     file = fopen(filename, "w");
     if (file == NULL)
